@@ -1010,6 +1010,86 @@ img { display: block; width: 100%; }
 .event-status::before { content:''; width:5px;height:5px;border-radius:50%;background:currentColor; }
 .event-status.open::before { animation: pulse 1.5s infinite; }
 
+
+/* ============================================================
+   PHASE 1 INFRASTRUCTURE BLUEPRINT
+   ============================================================ */
+.infrastructure-section {
+  padding: 72px 0;
+  background: var(--deep);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.infrastructure-objective {
+  max-width: 920px;
+  margin-bottom: 28px;
+  font-size: 15px;
+  color: var(--off);
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+}
+.infra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.infra-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 22px;
+}
+.infra-card h3 {
+  font-family: var(--font-display);
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.infra-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.infra-list li {
+  font-size: 13px;
+  color: var(--off);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+.infra-list li::before {
+  content: '•';
+  color: var(--acid);
+  position: absolute;
+  left: 0;
+}
+.infrastructure-impact {
+  margin-top: 24px;
+  background: var(--black);
+  border: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.impact-item {
+  padding: 16px;
+  border-right: 1px solid var(--border);
+}
+.impact-item:last-child { border-right: none; }
+.impact-num {
+  font-family: var(--font-display);
+  font-size: 34px;
+  line-height: 1;
+  color: var(--acid);
+}
+.impact-label {
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 /* ============================================================
    SUBMIT CTA BANNER
    ============================================================ */
@@ -1139,6 +1219,8 @@ footer {
 }
 @media (max-width: 1024px) {
   .news-layout { grid-template-columns: 1fr; }
+  .infra-grid { grid-template-columns: 1fr; }
+  .infrastructure-impact { grid-template-columns: repeat(2, 1fr); }
   .news-sidebar { position: static; }
   .pulse-stats { grid-template-columns: repeat(4, 1fr); }
   .trending-box { display: none; }
@@ -1158,6 +1240,9 @@ footer {
 }
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
+  .infrastructure-impact { grid-template-columns: 1fr; }
+  .impact-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .impact-item:last-child { border-bottom: none; }
   .nav-inner { padding: 0 20px; }
   .nav-menu { display: none; }
   .freshman-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1182,8 +1267,9 @@ footer {
         <a href="#submit">Submit Music</a>
         <a href="#freshman">2025 Freshman</a>
         <a href="#events">Events</a>
-        <a href="https://twitter.com/therealugs" target="_blank">Twitter</a>
-        <a href="https://instagram.com/undergroundsound" target="_blank">Instagram</a>
+        <a href="#infrastructure">Infrastructure</a>
+        <a href="https://twitter.com/therealugs" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="https://instagram.com/undergroundsound" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
   </div>
@@ -1206,12 +1292,13 @@ footer {
         <li><a href="#freshman">Freshman List <span class="nav-badge">2025</span></a></li>
         <li><a href="#videos">Videos</a></li>
         <li><a href="#events">Events</a></li>
+        <li><a href="#infrastructure">Infrastructure</a></li>
         <li><a href="#submit">Promotions</a></li>
       </ul>
       <div class="nav-actions">
         <div class="nav-search">
           <span class="nav-search-icon">🔍</span>
-          <input type="text" placeholder="Search artists, news...">
+          <input type="text" placeholder="Search artists, news..." aria-label="Search artists and coverage">
         </div>
         <a href="#submit" class="btn btn-acid" style="padding: 10px 20px; font-size: 11px;">Submit ↗</a>
       </div>
@@ -1740,7 +1827,7 @@ footer {
         <div class="eyebrow" style="margin-bottom:12px;">Watch</div>
         <div class="section-title">LATEST<br>VIDEOS</div>
       </div>
-      <a href="https://youtube.com/@therealugs" target="_blank" class="see-all">YouTube Channel →</a>
+      <a href="https://youtube.com/@therealugs" target="_blank" rel="noopener noreferrer" class="see-all">YouTube Channel →</a>
     </div>
 
     <div class="video-grid reveal">
@@ -1755,7 +1842,7 @@ footer {
           <div class="video-title">ØWAY CYPHER — Full Session</div>
           <p class="video-desc">The most viewed cypher on Underground Sound's platform. Multiple underground artists, unfiltered bars, one camera. Watch the video that proved UGS builds careers.</p>
           <div style="display:flex;gap:12px;align-items:center;">
-            <a href="https://youtube.com/@therealugs" target="_blank" class="btn btn-acid" style="font-size:11px;padding:10px 20px;">Watch on YouTube ↗</a>
+            <a href="https://youtube.com/@therealugs" target="_blank" rel="noopener noreferrer" class="btn btn-acid" style="font-size:11px;padding:10px 20px;">Watch on YouTube ↗</a>
             <span style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:2px;">@THEREALUGS</span>
           </div>
         </div>
@@ -1915,6 +2002,77 @@ footer {
   </div>
 </section>
 
+
+
+<!-- PHASE 1 INFRASTRUCTURE -->
+<section class="infrastructure-section" id="infrastructure">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px;">Phase 1 Blueprint</div>
+        <div class="section-title">DIGITAL<br>INFRASTRUCTURE</div>
+      </div>
+      <a href="#submit" class="see-all">Start Submission Flow →</a>
+    </div>
+
+    <p class="infrastructure-objective reveal">
+      Objective: convert social visibility into owned digital authority. This phase establishes an editorial homepage, structured artist profiles, a digital freshman framework, event landing architecture, moderation operations, and a data capture base that compounds audience ownership over time.
+    </p>
+
+    <div class="infra-grid reveal">
+      <article class="infra-card">
+        <span class="cat cat-feature" style="margin-bottom:10px;">Media Layer</span>
+        <h3>Editorial Engine</h3>
+        <ul class="infra-list">
+          <li>XXL/Complex-inspired homepage hierarchy</li>
+          <li>Press-style stories, interviews, and recaps</li>
+          <li>Searchable artist profile templates by city and sound</li>
+          <li>Evergreen event landing pages for SEO growth</li>
+        </ul>
+      </article>
+      <article class="infra-card">
+        <span class="cat cat-fresh" style="margin-bottom:10px;">Talent Layer</span>
+        <h3>Artist Pipeline</h3>
+        <ul class="infra-list">
+          <li>Digital Freshman List with clear selection criteria</li>
+          <li>Submission portal with campaign intake fields</li>
+          <li>Promotion package routing for social + video</li>
+          <li>Fast review SLA and transparent acceptance signals</li>
+        </ul>
+      </article>
+      <article class="infra-card">
+        <span class="cat cat-news" style="margin-bottom:10px;">Ops Layer</span>
+        <h3>Admin + Analytics</h3>
+        <ul class="infra-list">
+          <li>Moderation dashboard queue for content approvals</li>
+          <li>Creator-level campaign reporting foundations</li>
+          <li>Cloud-ready architecture and permissioned access</li>
+          <li>Data model prepared for event and ticket intelligence</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="infrastructure-impact reveal">
+      <div class="impact-item">
+        <div class="impact-num">SEO</div>
+        <div class="impact-label">Authority Growth</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">DATA</div>
+        <div class="impact-label">Audience Ownership</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">TRUST</div>
+        <div class="impact-label">Centralized Credibility</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">SCALE</div>
+        <div class="impact-label">Less Algorithm Reliance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SUBMIT CTA -->
 <section class="cta-banner" id="submit">
   <div class="cta-banner-bg"></div>
@@ -1961,9 +2119,9 @@ footer {
         </div>
         <p>The media brand for underground artists. Daily content, real promotion, and authentic exposure across Twitter, Instagram, and YouTube. Building toward the underground's flagship event.</p>
         <div class="footer-socials">
-          <a href="https://twitter.com/therealugs" target="_blank" class="social-ico">𝕏</a>
-          <a href="https://instagram.com/undergroundsound" target="_blank" class="social-ico">📸</a>
-          <a href="https://youtube.com/@therealugs" target="_blank" class="social-ico">▶</a>
+          <a href="https://twitter.com/therealugs" target="_blank" rel="noopener noreferrer" class="social-ico">𝕏</a>
+          <a href="https://instagram.com/undergroundsound" target="_blank" rel="noopener noreferrer" class="social-ico">📸</a>
+          <a href="https://youtube.com/@therealugs" target="_blank" rel="noopener noreferrer" class="social-ico">▶</a>
         </div>
       </div>
       <div class="footer-col">
@@ -1973,6 +2131,7 @@ footer {
           <li><a href="#freshman">Freshman List <span class="new">2025</span></a></li>
           <li><a href="#videos">Videos</a></li>
           <li><a href="#events">Events</a></li>
+          <li><a href="#infrastructure">Infrastructure</a></li>
           <li><a href="#">Features</a></li>
         </ul>
       </div>
