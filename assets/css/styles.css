@@ -1243,3 +1243,41 @@ footer {
   footer .footer-top { grid-template-columns: 1fr; }
   .util-bar { display: none; }
 }
+
+/* Enterprise platform structure additions */
+.breadcrumb {
+  margin-top: 14px;
+  margin-bottom: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.breadcrumb a { color: var(--off); }
+.breadcrumb a:hover { color: var(--acid); }
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.phase-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 18px;
+}
+.phase-block h3 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 10px;
+}
+.phase-block p,
+.phase-block li {
+  color: var(--off);
+  font-size: 17px;
+  line-height: 1.4;
+}
+.phase-block ul { padding-left: 16px; }
